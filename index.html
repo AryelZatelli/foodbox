@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+
+    <style>
+      body {
+        background: lightgray;
+      }
+
+      .topo {
+        background: red;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 35px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 2%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .preco {
+        margin: 0;
+        font-size: 17px;
+        font-weight: bolder;
+      }
+
+      .botao {
+        background: green;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      img {
+        width: 130px;
+        height: 100px;
+        border-radius: 5px;
+        float: right;
+      }
+    </style>
+  </head>
+  <br />
+  <body>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <h3>Primeiro, o seu prato</h3>
+
+    <div id="frango" class="produto" onclick="escolherFrango()">
+      <img
+        src="https://receitanatureba.com/wp-content/uploads/2020/09/Salada-com-Frango-Desfiado.jpg"
+      />
+      <h4>Frango Yin-Yang</h4>
+      <p>Frango desfiado com salada mista</p>
+      <p class="preco">R$ 19,90</p>
+    </div>
+
+    <div id="carne" class="produto" onclick="escolherCarne()">
+      <img
+        src="https://guiadacozinha.com.br/wp-content/uploads/2019/10/salada-verde-com-tiras-de-carne-ao-molho-tailandes-38790.jpg"
+      />
+      <h4>Carne e salada</h4>
+      <p>Carne picada com salada verde</p>
+      <p class="preco">R$ 29,90</p>
+    </div>
+
+    <h3>Agora, uma bebida</h3>
+
+    <div id="cocaNormal" class="produto" onclick="escolherCocaNormal()">
+      <img
+        src="https://images.tcdn.com.br/img/img_prod/1115696/coca_cola_original_lata_350ml_27_1_152c3b66fb7a84db006d3238b116cb50.png"
+      />
+      <h4>Refrigerante coca coca lata</h4>
+      <p>Coca coca original 350ml</p>
+      <p class="preco">R$ 5,00</p>
+    </div>
+
+    <div id="cocaZero" class="produto" onclick="escolherCocaZero()">
+      <img
+        src="https://www.extramercado.com.br/img/uploads/1/674/33169674.png"
+      />
+      <h4>Refrigerante coca cola zero lata</h4>
+      <p>Coca cola zero 350ml</p>
+      <p class="preco">R$ 5,00</p>
+    </div>
+
+    <h3>Por fim, sua sobremesa</h3>
+
+    <div id="sorvete" class="produto" onclick="escolherSorvete()">
+      <img
+        src="https://phygital-files.mercafacil.com/mercado-milenio/uploads/produto/sorvete_superfrut_creme_pt2lt_040c726d-50ee-46ea-90cd-9201dcba9abb.png"
+      />
+      <h4>Sorvete geladinho</h4>
+      <p>3 bolas de sorvete à sua escolha</p>
+      <p class="preco">R$ 9,90</p>
+    </div>
+
+    <div id="acai" class="produto" onclick="escolherAcai()">
+      <img
+        src="https://d1muf25xaso8hp.cloudfront.net/https://img.criativodahora.com.br/2024/05/criativo-664b471b477daimg-2024-05-20664b471b477dc.jpg?w=1000&h=&auto=compress&dpr=1&fit=max"
+      />
+      <h4>Copo da felicidade de açaí</h4>
+      <p>Copo de 500ml de açaí</p>
+      <p class="preco">R$ 14,50</p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">Finalizar pedido</div>
+
+    <script>
+      let prato;
+      let bebida;
+      let sobremesa;
+
+      function escolherFrango() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("carne").style.borderColor = "white";
+        prato = "Frango";
+      }
+      function escolherCarne() {
+        document.getElementById("carne").style.borderColor = "green";
+        document.getElementById("frango").style.borderColor = "white";
+        prato = "Carne";
+      }
+      function escolherCocaNormal() {
+        document.getElementById("cocaNormal").style.borderColor = "green";
+        document.getElementById("cocaZero").style.borderColor = "white";
+        bebida = "Coca normal";
+      }
+      function escolherCocaZero() {
+        document.getElementById("cocaZero").style.borderColor = "green";
+        document.getElementById("cocaNormal").style.borderColor = "white";
+        bebida = "Coca zero";
+      }
+      function escolherSorvete() {
+        document.getElementById("sorvete").style.borderColor = "green";
+        document.getElementById("acai").style.borderColor = "white";
+        sobremesa = "Sorvete";
+      }
+      function escolherAcai() {
+        document.getElementById("acai").style.borderColor = "green";
+        document.getElementById("sorvete").style.borderColor = "white";
+        sobremesa = "Açaí";
+      }
+      function finalizarPedido() {
+        let mensagem;
+
+        mensagem =
+          "Olá, gostaria de pedir um combo: " +
+          prato +
+          ", " +
+          bebida +
+          " e " +
+          sobremesa;
+
+        window.open("https://wa.me/+5547991011898?text=" + mensagem);
+      }
+    </script>
+  </body>
+</html>
